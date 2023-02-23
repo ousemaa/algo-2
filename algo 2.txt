@@ -1,0 +1,40 @@
+Algorithm using a procedure:
+
+PROCEDURE dot_product(v1, v2);
+  ps ? 0;
+  FOR i ? 0 TO length(v1) DO
+    ps ? ps + v1[i] * v2[i];
+  END FOR;
+END PROCEDURE;
+
+ALGORITHM orthogonal_check(vector_list);
+  FOR i ? 0 TO length(vector_list) DO
+    ps ? dot_product(vector_list[i][0], vector_list[i][1]);
+    IF ps = 0 THEN
+      PRINT "The two vectors are orthogonal."
+    ELSE
+      PRINT "The two vectors are not orthogonal.";
+    END IF;
+  END FOR;
+END ALGORITHM;
+
+Algorithm using a function:
+
+FUNCTION dot_product(v1, v2);
+  ps ? 0;
+  FOR i ? 0 TO length(v1) DO
+    ps ? ps + v1[i] * v2[i];
+  END FOR;
+  RETURN ps;
+END FUNCTION;
+
+ALGORITHM orthogonal_check(vector_list);
+  FOR i ? 0 TO length(vector_list) DO
+    ps ? dot_product(vector_list[i][0], vector_list[i][1]);
+    IF ps = 0 THEN
+      PRINT "The two vectors are orthogonal.";
+    ELSE
+      PRINT "The two vectors are not orthogonal.";
+    END IF;
+  END FOR;
+END ALGORITHM;
